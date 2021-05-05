@@ -9,6 +9,10 @@ import {
     DrawerItem
 
 } from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { Platform } from 'react-native';
+
+
 import Home from '../Screens/Home';
 import Contact from '../Screens/Contact';
 import About from '../Screens/About';
@@ -24,7 +28,8 @@ function CustomDrawerContent(props) {
             </View>
             <DrawerContentScrollView {...props}>
                 <DrawerItemList {...props} />
-                <DrawerItem 
+                <DrawerItem  
+                    icon={() => <Icon name={Platform.OS === 'ios' ? "ios-close" : "md-close"} color="black" size={22}/> }
                     label="Close drawer"
                     onPress={() => props.navigation.closeDrawer()}
                 />
