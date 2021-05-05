@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Header from '../Header/Header'
 
-export default function Home() {
+
+export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
+            <Header title="Home" navigation={navigation} />
             <View style={styles.content}>
                 <Text style={styles.text}>Home is here!</Text>
             </View>
