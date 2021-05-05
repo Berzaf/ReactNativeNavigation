@@ -9,14 +9,18 @@ import {
     DrawerItem
 
 } from '@react-navigation/drawer';
-import Contact from '../Screens/Contact';
 import Home from '../Screens/Home';
+import Contact from '../Screens/Contact';
+import About from '../Screens/About';
 
 function CustomDrawerContent(props) {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.drawerHeader}>
-                <Text style={styles.drawerHeaderText}>Drawer Menu</Text>
+                <View>
+                    <Text style={styles.drawerHeaderText}>Drawer Menu</Text>
+                </View>
+                
             </View>
             <DrawerContentScrollView {...props}>
                 <DrawerItemList {...props} />
@@ -34,6 +38,8 @@ function MyDrawer() {
         <Drawer.Navigator backBehavior="history" drawerContent={props => <CustomDrawerContent {...props} />}>
             <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Contact" component={Contact} />
+            <Drawer.Screen name="About" component={About} />
+
         </Drawer.Navigator>
     )
 }

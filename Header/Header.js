@@ -9,7 +9,7 @@ const Header = ({ navigation, title}) => {
     return (
         <View style={styles.header}>
             <TouchableOpacity style={styles.icons} onPress={openMenu}>
-                <Ionicons name="md-menu" size={28} color="red" />
+                <Ionicons name="md-menu" size={28} color="black" />
             </TouchableOpacity>
             <View style={styles.headerTitle}>
             <Text style={styles.headerText}>{title}</Text>
@@ -21,7 +21,9 @@ const Header = ({ navigation, title}) => {
 const styles = StyleSheet.create({
     header: {
         marginTop: 26,
-        width: 60,
+        marginBottom: 26,
+        width: "100%",
+        height: 60,    
         flexDirection: "row",
         alignContent: "center",
         justifyContent: "center"
