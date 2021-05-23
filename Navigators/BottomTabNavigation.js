@@ -60,7 +60,7 @@ function MyTabs() {
                 options={{ 
                     tabBarLabel: "Contact",
                     tabBarIcon: ({ color, size}) => (
-                        <Icon name={Platform.OS == 'iso' ? "ios-contacts" : "md-contacts"} color={color} size={size} />
+                        <Icon name={Platform.OS == 'iso' ? "ios-contacts" : "contacts"} color={color} size={size} />
                     ),
                 }}
 
