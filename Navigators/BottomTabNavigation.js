@@ -4,6 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import { Platform } from 'react-native';
+import TopBarNavigator from "./TopBarNavigator";
+
 
 
 
@@ -49,18 +51,18 @@ function MyTabs() {
                 options={{ 
                     tabBarLabel: "Home",
                     tabBarIcon: ({ color, size}) => (
-                        <Icon name={Platform.OS == 'iso' ? "ios-home" : "md-home"} color={color} size={size} />
+                        <Icon name={Platform.OS === 'iso' ? "ios-home" : "md-home"} color={color} size={size} />
                     ),
                 }}
             
             />
             <Tab.Screen 
                 name="Contact"
-                component={Contact}
+                component={TopBarNavigator}
                 options={{ 
                     tabBarLabel: "Contact",
                     tabBarIcon: ({ color, size}) => (
-                        <Icon name={Platform.OS == 'iso' ? "ios-contacts" : "contacts"} color={color} size={size} />
+                        <Icon name={Platform.OS === 'iso' ? "ios-contacts" : "contacts"} color={color} size={size} />
                     ),
                 }}
 
@@ -71,7 +73,7 @@ function MyTabs() {
                 options={{ 
                     tabBarLabel: "About",
                     tabBarIcon: ({ color, size}) => (
-                        <Icon name={Platform.OS == 'iso' ? "ios-information-circle" : "md-information-circle"} color={color} size={size} />
+                        <Icon name={Platform.OS === 'iso' ? "ios-information-circle" : "md-information-circle"} color={color} size={size} />
                     ),
                 }}
             />

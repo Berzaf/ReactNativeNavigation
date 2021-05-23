@@ -81,6 +81,21 @@ function About({ navigation }) {
     )
 }
 
+const forFade = ({ current, next }) => {
+    const opacity = Animated.add(
+        current.progress,
+        next ? next.progress : 0
+    ).interpolate({
+        inputRange: [0, 1, 2],
+        outputRange: [0, 1, 0]
+    });
+    return {
+        leftButtonStyle: { opacity },
+        rightButtonStyle: { opacity },
+        titleStyle: { opacity },
+        backgroundStyle: { opacity }
+    };
+}
 const Stack = createStackNavigator();
 
 function MyStack() {
@@ -98,10 +113,12 @@ function MyStack() {
             <Stack.Screen 
                 name="Contact"
                 component={Contact}
+                options={{ headerStyleInterpolator: forFade}}
             />
             <Stack.Screen 
                 name="About"
                 component={About}
+                options={{ headerStyleInterpolator: forFade}}
             />
 
         </Stack.Navigator>
